@@ -1,0 +1,229 @@
+/* Japan in Numbers — a calm statistical-office look with its own identity:
+   indigo and vermillion on warm paper, tabular numerals, generous tables. */
+
+:root {
+  --paper: #f7f4ee;
+  --paper-deep: #ece7db;
+  --ink: #1f2733;
+  --ink-soft: #5b6572;
+  --line: #d8d2c2;
+  --indigo: #22386e;
+  --indigo-deep: #182a56;
+  --vermillion: #c73e2e;
+  --teal: #2e7d74;
+  --gold: #b98a1f;
+  --card: #fffdf8;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Hiragino Sans", "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.55;
+  font-variant-numeric: tabular-nums;
+}
+
+h1, h2, h3 { line-height: 1.2; font-weight: 700; }
+a { color: var(--indigo); }
+
+/* ---------- header ---------- */
+
+.site-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.4rem;
+  padding: 0.85rem clamp(1rem, 4vw, 2.5rem);
+  background: var(--indigo-deep);
+  color: #f2efe6;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: inherit;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.brand-sun {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--vermillion);
+  box-shadow: 0 0 0 3px rgba(199, 62, 46, 0.35);
+  flex: none;
+}
+
+.brand-text { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.01em; }
+.brand-in { color: #d8a49c; font-weight: 400; font-style: italic; }
+
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.2rem 0.4rem; }
+.site-nav a {
+  color: #e6e2d4;
+  text-decoration: none;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+.site-nav a:hover { background: rgba(255, 255, 255, 0.12); }
+.site-nav a.active { background: var(--vermillion); color: #fff; }
+
+/* ---------- page frame ---------- */
+
+.page { max-width: 1080px; margin: 0 auto; padding: clamp(1rem, 3.5vw, 2.2rem); }
+
+.lede { max-width: 47rem; }
+.lede h1 { font-size: clamp(1.7rem, 4.5vw, 2.5rem); margin: 0.2rem 0 0.5rem; }
+.lede p { color: var(--ink-soft); margin: 0.2rem 0 1.2rem; }
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--vermillion);
+  margin: 0;
+}
+
+h2.section { font-size: 1.35rem; margin: 2rem 0 0.7rem; }
+
+/* ---------- cards ---------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 0.9rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+}
+
+.card .label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.card .figure { font-size: 1.85rem; font-weight: 700; margin: 0.15rem 0; color: var(--indigo-deep); }
+.card .sub { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+.source {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--teal);
+  background: #e2efec;
+  border-radius: 999px;
+  padding: 0.08rem 0.55rem;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 0.9rem;
+  align-items: start;
+}
+
+/* ---------- tables ---------- */
+
+table.stats {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+table.stats th, table.stats td {
+  padding: 0.55rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+table.stats th {
+  background: var(--paper-deep);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+table.stats tr:last-child td { border-bottom: none; }
+table.stats td.num, table.stats th.num { text-align: right; }
+table.stats tr.highlight td { background: #f6e8e4; font-weight: 700; }
+table.stats .rankbar {
+  display: inline-block;
+  height: 9px;
+  background: var(--indigo);
+  border-radius: 999px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+table.stats tr.highlight .rankbar { background: var(--vermillion); }
+
+/* ---------- controls ---------- */
+
+.controls { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: end; margin: 1rem 0; }
+.field { display: flex; flex-direction: column; gap: 0.25rem; }
+.field label { font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); }
+.field select {
+  font: inherit;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+}
+
+/* ---------- charts ---------- */
+
+.chart-card { padding: 1.1rem 1.2rem; }
+.chart-card h3 { margin: 0 0 0.2rem; font-size: 1.05rem; }
+.chart-card .chart-sub { margin: 0 0 0.6rem; color: var(--ink-soft); font-size: 0.88rem; }
+svg.chart { width: 100%; height: auto; display: block; }
+.legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.4rem; }
+.legend .swatch { display: inline-block; width: 0.8rem; height: 0.8rem; border-radius: 3px; margin-right: 0.35rem; vertical-align: -0.1rem; }
+.legend-row { display: flex; align-items: center; gap: 0.45rem; padding: 0.28rem 0; border-bottom: 1px dashed var(--line); font-size: 0.94rem; }
+.legend-row:last-child { border-bottom: none; }
+.legend-row .legend-pct { margin-left: auto; font-weight: 700; }
+
+/* ---------- bars ---------- */
+
+.bar { height: 12px; background: var(--paper-deep); border-radius: 999px; overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--teal); border-radius: 999px; }
+
+/* ---------- footer ---------- */
+
+.site-foot {
+  border-top: 1px solid var(--line);
+  margin-top: 2.5rem;
+  padding: 1.4rem clamp(1rem, 4vw, 2.5rem) 2rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+.site-foot p { max-width: 62rem; margin: 0.3rem auto; }
+.foot-small { font-size: 0.82rem; }
+
+/* ---------- phone ---------- */
+
+@media (max-width: 720px) {
+  .split { grid-template-columns: 1fr; }
+  .site-head { position: static; }
+  .brand { margin-right: 0; }
+  table.stats { font-size: 0.88rem; }
+  table.stats th, table.stats td { padding: 0.45rem 0.5rem; }
+  .hide-phone { display: none; }
+  .card .figure { font-size: 1.5rem; }
+}
