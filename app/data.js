@@ -2,7 +2,7 @@
 // values are the published magnitudes, rounded for readability (see the footer of every page).
 
 export const KEY_INDICATORS = [
-  { label: 'Population', value: '124.4 million', detail: 'Down about 0.4% a year since the 2008 peak of 128.1 million', source: 'World Bank', year: 2023 },
+  { label: 'Population', value: '124.4 million', detail: 'Falling every year since the 2008 peak of 128.1 million', source: 'World Bank', year: 2023 },
   { label: 'Gross domestic product', value: '$4.21 trillion', detail: 'The world\u2019s fourth-largest economy, behind the US, China and Germany', source: 'World Bank', year: 2023 },
   { label: 'GDP per person', value: '$33,800', detail: 'Nominal, per head of population', source: 'World Bank', year: 2023 },
   { label: 'Life expectancy', value: '84.0 years', detail: 'Among the highest ever recorded for a large country', source: 'World Bank', year: 2022 },
@@ -35,8 +35,8 @@ export const PREFECTURES = [
   { name: 'Saitama', population: 7.34, note: 'Tokyo\u2019s northern commuter belt' },
   { name: 'Chiba', population: 6.28, note: 'East of Tokyo, around the bay' },
   { name: 'Hyogo', population: 5.37, note: 'Kobe and the Inland Sea coast' },
-  { name: 'Hokkaido', population: 5.09, note: 'The northern island; largest by area, shrinking fastest' },
   { name: 'Fukuoka', population: 5.10, note: 'Kyushu\u2019s hub city region' },
+  { name: 'Hokkaido', population: 5.09, note: 'The northern island; largest by area, shrinking fastest' },
   { name: 'Shizuoka', population: 3.56, note: 'Between Tokyo and Nagoya, under Mt Fuji' },
 ];
 

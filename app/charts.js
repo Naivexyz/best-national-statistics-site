@@ -21,9 +21,9 @@ function axes(width, height, padL, padB, max, formatY) {
   return { out, y, plotH };
 }
 
-export function lineChart(series, { width = 640, height = 300, color = INDIGO, unit = '', label = '' } = {}) {
+export function lineChart(series, { width = 640, height = 300, color = INDIGO, unit = '', label = '', floor = undefined } = {}) {
   const max = Math.max(...series.map((p) => p.value)) * 1.08;
-  const min = Math.min(0, Math.min(...series.map((p) => p.value)) * 1.08);
+  const min = floor !== undefined ? floor : Math.min(0, Math.min(...series.map((p) => p.value)) * 1.08);
   const padL = 46, padB = 26;
   const plotW = width - padL - 10, plotH = height - padB - 14;
   const xMin = series[0].year, xMax = series[series.length - 1].year;

@@ -37,7 +37,7 @@ export function overviewView() {
     <p class="chart-sub">Sixty years of growth, a peak of ${peak.value} million in ${peak.year}, then a decline of
     ${Math.abs(fall.abs)} million (${fall.pct}%) by 2023 — the turn that shapes everything else on this site.
     Source: World Bank.</p>
-    ${lineChart(POPULATION_TREND, { unit: 'M', label: 'Population of Japan, millions' })}
+    ${lineChart(POPULATION_TREND, { unit: 'M', label: 'Population of Japan, millions', floor: 80 })}
   </div>
 
   <h2 class="section">Go deeper</h2>
@@ -57,6 +57,12 @@ export function populationView() {
     <p>Japan's population peaked at 128.1 million in 2008 and has fallen every year since, to about
     124.4 million in 2023. Deaths have outnumbered births since 2007; in 2024 the gap was about
     900,000 people. What growth remains gathers in Tokyo and the big city regions.</p>
+  </div>
+  <div class="card chart-card" style="margin-bottom:0.9rem">
+    <h3>Population, 1960 to 2023 (millions)</h3>
+    <p class="chart-sub">The long rise, the 2008 peak of 128.1 million, and the decline since — about 550,000 people a year
+    in the most recent years, roughly a city the size of Kobe every three years. Source: World Bank.</p>
+    ${lineChart(POPULATION_TREND, { unit: 'M', label: 'Population of Japan, millions', floor: 80 })}
   </div>
   <div class="split">
     <div class="card chart-card">
@@ -143,7 +149,7 @@ export function societyView() {
     <h3>Life expectancy at birth, 1960 to 2022</h3>
     <p class="chart-sub">Sixteen extra years of life since 1960. The small dip in 2021–22, the first in decades, followed the
     pandemic years. Source: World Bank.</p>
-    ${lineChart(LIFE_EXPECTANCY, { unit: '', color: '#2e7d74', label: 'Life expectancy in Japan, years' })}
+    ${lineChart(LIFE_EXPECTANCY, { unit: '', color: '#2e7d74', label: 'Life expectancy in Japan, years', floor: 50 })}
   </div>
   <h2 class="section">Society in figures</h2>
   <div class="cards">
